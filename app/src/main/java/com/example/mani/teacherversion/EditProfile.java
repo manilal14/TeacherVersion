@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -123,7 +124,9 @@ public class EditProfile extends AppCompatActivity {
         EditText et_name, et_college,et_branch;
         EditText et_password, et_dob, et_mobile, et_email;
         RadioButton rb_male, rb_female;
+        ImageView profile_pic;
 
+        profile_pic = findViewById(R.id.edit_profile_pic);
         et_name    = findViewById(R.id.edit_profile_name);
         et_college = findViewById(R.id.edit_profile_college);
         et_branch  = findViewById(R.id.edit_profile_branch);
@@ -151,10 +154,14 @@ public class EditProfile extends AppCompatActivity {
 
         String gender = teacherInfo.get(KEY_GENDER);
 
-        if(gender.equals("0"))
+        if(gender.equals("0")){
+            profile_pic.setImageResource(R.drawable.ic_male_black);
             rb_male.setChecked(true);
-        else
+        }
+        else{
+            profile_pic.setImageResource(R.drawable.ic_female_black);
             rb_female.setChecked(true);
+        }
     }
 
     private void  getFromEditProfile(){

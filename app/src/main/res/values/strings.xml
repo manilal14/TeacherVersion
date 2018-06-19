@@ -57,6 +57,7 @@
     <string name="feed_title">Feed Title...</string>
     <string name="feed_describtion">Feed Describtion...</string>
     <string name="submit_feed">Submit Feed</string>
+    <string name="no_students_are_available">No students are available !</string>
 
 
 </resources>

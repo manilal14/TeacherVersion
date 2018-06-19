@@ -219,13 +219,31 @@ public class NewsFeed extends AppCompatActivity
             startActivity(new Intent(NewsFeed.this,TimeTable.class));
 
         } else if (id == R.id.nav_attendence) {
+
+            if (!mLoginSession.isLoggedIn()) {
+                Toast.makeText(NewsFeed.this,"You must Login first",Toast.LENGTH_SHORT).show();
+                return true;
+            }
             startActivity(new Intent(NewsFeed.this, FetchSubjectList.class));
 
         } else if (id == R.id.nav_chatroom) {
 
+            if (!mLoginSession.isLoggedIn()) {
+                Toast.makeText(NewsFeed.this,"You must Login first",Toast.LENGTH_SHORT).show();
+                return true;
+            }
+
         } else if (id == R.id.nav_certificate) {
+            if (!mLoginSession.isLoggedIn()) {
+                Toast.makeText(NewsFeed.this,"You must Login first",Toast.LENGTH_SHORT).show();
+                return true;
+            }
 
         } else if (id == R.id.nav_syllabus) {
+            if (!mLoginSession.isLoggedIn()) {
+                Toast.makeText(NewsFeed.this,"You must Login first",Toast.LENGTH_SHORT).show();
+                return true;
+            }
 
         } else if (id == R.id.nav_about) {
 
