@@ -39,6 +39,21 @@ public class DialogCheckPastAttendance {
 
     public void setDialogBox() {
 
+        List<String> classes_for_spinner = new ArrayList<>();
+
+        for(int i=0;i<subjectList.size();i++){
+
+            String sem        = subjectList.get(i).getSemester();
+            String class_name = subjectList.get(i).getClassName();
+            classes_for_spinner.add(sem +"   "+ class_name);
+
+        }
+
+        if(classes_for_spinner.isEmpty()){
+            Toast.makeText(mCtx,"Classes not available",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
 
         final AlertDialog alertDialog;
 
@@ -72,15 +87,6 @@ public class DialogCheckPastAttendance {
 
         // period and class name is set as spinner
         Integer[] periods_spinner     = {1,2,3,4,5,6};
-        List<String> classes_for_spinner = new ArrayList<>();
-
-        for(int i=0;i<subjectList.size();i++){
-
-            String sem        = subjectList.get(i).getSemester();
-            String class_name = subjectList.get(i).getClassName();
-            classes_for_spinner.add(sem +"   "+ class_name);
-
-        }
 
         ArrayAdapter<Integer> adapter_for_period = new ArrayAdapter<>(mCtx,
                 android.R.layout.simple_list_item_1,periods_spinner);

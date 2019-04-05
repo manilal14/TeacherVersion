@@ -195,13 +195,6 @@ public class EditProfile extends AppCompatActivity {
             gender = "0";
         else
             gender = "1";
-        /*Toast.makeText(EditProfile.this,"Gender "+gender
-                +" Password "+ password
-
-                        +" DOB "+ dob
-                        +" Contact "+ contact
-                        +" Email "+ email,
-                Toast.LENGTH_SHORT).show();*/
 
         //Send these data to database(server)
         sendUpdatedDataToDatabase(password,dob,contact,email,gender);
